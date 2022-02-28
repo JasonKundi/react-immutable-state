@@ -10,11 +10,13 @@ import "./App.css";
 
 function App() {
   const [workouts, setWorkouts] = useState(initialWorkouts);
+  const [showCompletedWorkouts, setShowCompletedWorkouts] = useState(true)
 
   const addNewWorkout = () => {
-    const newWorkout = [...workouts];
-    newWorkout.push({ generateWorkout,});
-    setWorkouts(newWorkout);
+    const newWorkout = generateWorkout()
+    const workoutCopy = [...workouts];
+    workoutCopy.push(newWorkout);
+    setWorkouts(workoutCopy);
     console.log("addNewWorkout:", newWorkout);
   };
 
